@@ -1,5 +1,7 @@
 import { Recipe } from "./model";
 import "./css/recipes.css";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
 
 type RecipesProps = {
     recipes: Recipe[];
@@ -9,10 +11,20 @@ type RecipesProps = {
 const Recipes = ({ recipes, onClick }: RecipesProps) => (
     <div>
         <h2 className="title">Recipes</h2>
-        <div>
-            <ul className="card_list">
+        <div className="carousel">
+            <Splide
+                className="card_list"
+                options={{
+                    type: "loop",
+                    perPage: 5,
+                    perMove: 1,
+                    gap: "6rem",
+                    with: "17em",
+                    padding: "50px",
+                }}
+            >
                 {recipes.map((recipe) => (
-                    <li className="card">
+                    <SplideSlide className="card">
                         <img
                             className="image"
                             src={
@@ -36,9 +48,9 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => (
                                 <i className="fas fa-shopping-basket"></i>
                             </button>
                         </div>
-                    </li>
+                    </SplideSlide>
                 ))}
-            </ul>
+            </Splide>
         </div>
     </div>
 );
