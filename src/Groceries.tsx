@@ -1,6 +1,7 @@
 import * as React from "react";
+import Title from "./components/title/Title";
 import { Groceries } from "./model";
-import "./css/groceries.css";
+import "./styles/groceries.css";
 
 type GroceriesProps = {
     groceries: Groceries;
@@ -9,24 +10,40 @@ type GroceriesProps = {
 const GroceriesPanel = ({ groceries }: GroceriesProps) => {
     const departments = Object.keys(groceries);
     if (departments.length === 0) {
-        return <div className="empty_list">Your list is empty</div>;
+        return (
+            <div>
+                <Title title="Groceries"></Title>
+                <div className="groceries_card">
+                    <div className="empty_list">Your list is empty</div>
+                </div>
+            </div>
+        );
     }
     return (
-        <div className="info-card">
-            <ul>
-                {departments.map((department) => (
-                    <li>
-                        <span>{department}</span>
-                        <ul>
-                            {groceries[department].map((ingredient) => (
-                                <li key={ingredient.name}>
-                                    {ingredient.name} x {ingredient.quantity}
-                                </li>
-                            ))}
-                        </ul>
-                    </li>
-                ))}
-            </ul>
+        <div>
+            <Title title="Groceries"></Title>
+            <div className="groceries_card">
+                <ul className="wrapper">
+                    {departments.map((department) => (
+                        <div className="department_container">
+                            <span className="department">{department}</span>
+                            <div className="ingredient_container">
+                                {groceries[department].map((ingredient) => (
+                                    <div
+                                        key={ingredient.name}
+                                        className="ingredient"
+                                    >
+                                        <i className="fas fa-angle-right"></i>
+                                        {ingredient.name} x{" "}
+                                        {ingredient.quantity.toFixed(2)}{" "}
+                                        {ingredient.unit}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };

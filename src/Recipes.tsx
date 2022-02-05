@@ -1,5 +1,7 @@
 import { Recipe } from "./model";
-import "./css/recipes.css";
+import Title from "./components/title/Title";
+import Button from "./components/button/Button";
+import "./styles/recipes.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
@@ -10,35 +12,16 @@ type RecipesProps = {
 
 const Recipes = ({ recipes, onClick }: RecipesProps) => (
     <div>
-        <div className="title_wrapper">
-            <h2 className="title">
-                Recipes
-                <div className="title_hover_line"></div>
-            </h2>
-        </div>
+        <Title title="Recipes"></Title>
         <div className="carousel">
             <Splide
                 className="card_list"
                 options={{
                     type: "loop",
-                    perPage: 5,
+                    perPage: 2,
                     perMove: 1,
                     gap: "6rem",
                     padding: "50px",
-                    breakpoints: {
-                        1600: {
-                            perPage: 4,
-                        },
-                        1200: {
-                            perPage: 3,
-                        },
-                        700: {
-                            perPage: 2,
-                        },
-                        300: {
-                            perPage: 1,
-                        },
-                    },
                 }}
             >
                 {recipes.map((recipe) => (
@@ -57,14 +40,14 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => (
                             <span className="serving">
                                 For {recipe.servings} people
                             </span>
-                            <button
+                            <Button
                                 className="button"
-                                key={recipe.recipe_id}
+                                id={recipe.recipe_id.toString()}
                                 onClick={() => onClick(recipe)}
                             >
-                                Add a meal{" "}
+                                Add a meal
                                 <i className="fas fa-shopping-basket"></i>
-                            </button>
+                            </Button>
                         </div>
                     </SplideSlide>
                 ))}

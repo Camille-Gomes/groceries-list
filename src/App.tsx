@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GroceriesComponent from "./Groceries";
-import Home from "./Home";
+import "./styles/main.css";
 import { addRecipeIngredientsToGroceryList, Groceries, Recipe } from "./model";
 import Recipes from "./Recipes";
 
@@ -14,8 +14,8 @@ const App = () => {
             <div>
                 <h1>Recipe 2 List!</h1>
 
-                <div>
-                    <div>
+                <div className="wrapper">
+                    <div className="block-left">
                         <Recipes
                             recipes={recipes}
                             onClick={(recipe) => {
@@ -28,7 +28,7 @@ const App = () => {
                             }}
                         />
                     </div>
-                    <div>
+                    <div className="block-right">
                         <GroceriesComponent groceries={groceries} />
                     </div>
                 </div>

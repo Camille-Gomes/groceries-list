@@ -11,7 +11,6 @@ h1 {
 }
 
 .title_wrapper {
-    width: 1800px;
     margin: 0 auto;
 }
 
@@ -46,7 +45,7 @@ h1 {
 }
 
 .carousel {
-    width: 1800px;
+    width: 800px;
     margin: 0 auto;
 }
 .card_list {
@@ -92,8 +91,8 @@ h1 {
 .button {
     background: #ddf3ff;
     font-size: 16px;
-    margin-right: 17px;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 3px;
     text-align: center;
     width: 150px;
     border-radius: 1em;

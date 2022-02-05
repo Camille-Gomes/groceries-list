@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.block-left {
+    float: left;
+    margin: 0 auto;
+}
+
+.block-right {
+    float: right;
+    margin: 0 auto;
+}
