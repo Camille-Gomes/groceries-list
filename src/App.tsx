@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GroceriesComponent from "./Groceries";
+import Home from "./Home";
 import { addRecipeIngredientsToGroceryList, Groceries, Recipe } from "./model";
 import Recipes from "./Recipes";
 
@@ -12,6 +13,7 @@ const App = () => {
         <div>
             <div>
                 <h1>Recipe 2 List!</h1>
+
                 <div>
                     <div>
                         <Recipes

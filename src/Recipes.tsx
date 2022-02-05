@@ -10,7 +10,12 @@ type RecipesProps = {
 
 const Recipes = ({ recipes, onClick }: RecipesProps) => (
     <div>
-        <h2 className="title">Recipes</h2>
+        <div className="title_wrapper">
+            <h2 className="title">
+                Recipes
+                <div className="title_hover_line"></div>
+            </h2>
+        </div>
         <div className="carousel">
             <Splide
                 className="card_list"
@@ -19,8 +24,21 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => (
                     perPage: 5,
                     perMove: 1,
                     gap: "6rem",
-                    with: "17em",
                     padding: "50px",
+                    breakpoints: {
+                        1600: {
+                            perPage: 4,
+                        },
+                        1200: {
+                            perPage: 3,
+                        },
+                        700: {
+                            perPage: 2,
+                        },
+                        300: {
+                            perPage: 1,
+                        },
+                    },
                 }}
             >
                 {recipes.map((recipe) => (
