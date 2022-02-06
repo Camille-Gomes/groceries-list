@@ -1,0 +1,94 @@
+.modal-background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(220, 217, 248, 0.6);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    left: 0px;
+    top: 0;
+}
+
+.modal-container {
+    width: 900px;
+    height: auto;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.modal-container .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.close-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+i {
+    color: #6558d3;
+}
+
+.modal-container .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.recipe-image {
+    width: 250px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.recipe-title {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 80px;
+}
+
+.instructions-container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.section {
+    text-align: start;
+    padding-left: 40px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.instructions {
+    padding: 0 40px;
+    font-size: 18px;
+    text-align: justify;
+}

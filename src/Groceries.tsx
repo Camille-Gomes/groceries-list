@@ -1,5 +1,4 @@
 import Title from "./components/title/Title";
-//import Modal from "./components/modal/Modal";
 import { Groceries } from "./model";
 import "./styles/groceries.css";
 import { useState } from "react";
