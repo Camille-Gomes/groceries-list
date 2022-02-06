@@ -1,7 +1,8 @@
-import * as React from "react";
 import Title from "./components/title/Title";
+//import Modal from "./components/modal/Modal";
 import { Groceries } from "./model";
 import "./styles/groceries.css";
+import { useState } from "react";
 
 type GroceriesProps = {
     groceries: Groceries;
@@ -9,6 +10,25 @@ type GroceriesProps = {
 
 const GroceriesPanel = ({ groceries }: GroceriesProps) => {
     const departments = Object.keys(groceries);
+
+    const [activeList, setActiveList] = useState<string[]>([]);
+
+    const handleClick = (event: any) => {
+        const element = event.target;
+        const btn = element.tagName === "I" ? element.parentElement : element;
+        const department = btn.id.split("-")[1];
+        const found = activeList.find((element) => element === department);
+
+        if (!found) {
+            setActiveList((oldActiveList) => [...oldActiveList, department]);
+        } else {
+            const newActiveList = activeList.filter(
+                (element) => element !== department,
+            );
+            setActiveList(() => newActiveList);
+        }
+    };
+
     if (departments.length === 0) {
         return (
             <div>
@@ -21,13 +41,23 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
     }
     return (
         <div>
-            <Title title="Groceries"></Title>
+            {/* <Title title="Groceries"></Title>
             <div className="groceries_card">
                 <ul className="wrapper">
                     {departments.map((department) => (
-                        <div className="department_container">
+                        <div
+                            id={`container-` + department}
+                            className="department_container"
+                        >
                             <span className="department">{department}</span>
-                            <div className="ingredient_container">
+                            <div
+                                id={`ingredient-container-` + department}
+                                className={`ingredient_container ${
+                                    activeList.includes(department)
+                                        ? "active"
+                                        : "inactive"
+                                }`}
+                            >
                                 {groceries[department].map((ingredient) => (
                                     <div
                                         key={ingredient.name}
@@ -40,9 +70,28 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
                                     </div>
                                 ))}
                             </div>
+                            <div
+                                id={`button-` + department}
+                                className="toggle"
+                                onClick={handleClick}
+                            >
+                                {activeList.includes(department) ? (
+                                    <i className="fas fa-angle-up"></i>
+                                ) : (
+                                    <i className="fas fa-ellipsis-h"></i>
+                                )}
+                            </div>
                         </div>
                     ))}
                 </ul>
+            </div> */}
+            <button id="myBtn">Open Modal</button>
+
+            <div id="myModal" className="modal">
+                <div className="modal-content">
+                    <span className="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
             </div>
         </div>
     );
