@@ -94,6 +94,7 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                                         onClick={() => toggleModal(recipe)}
                                     >
                                         See more
+                                        <i className="fas fa-plus"></i>
                                     </Button>
                                 </div>
                             </div>
