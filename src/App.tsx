@@ -11,10 +11,10 @@ const App = () => {
 
     return (
         <div>
-            <div>
+            <div className="container">
                 <h1>Recipe 2 List!</h1>
 
-                <div className="wrapper">
+                <div className="wrapper-block">
                     <div className="block-left">
                         <Recipes
                             recipes={recipes}

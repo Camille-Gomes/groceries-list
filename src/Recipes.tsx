@@ -58,10 +58,15 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                     className="card_list"
                     options={{
                         type: "loop",
-                        perPage: 2,
+                        perPage: 4,
                         perMove: 1,
                         gap: "6rem",
                         padding: "50px",
+                        breakpoints: {
+                            1000: {
+                                perPage: 1,
+                            },
+                        },
                     }}
                 >
                     {recipes.map((recipe) => (

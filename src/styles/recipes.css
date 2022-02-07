@@ -45,8 +45,8 @@ h1 {
 }
 
 .carousel {
-    width: 800px;
     margin: 0 auto;
+    width: 800px;
 }
 .card_list {
     display: flex;

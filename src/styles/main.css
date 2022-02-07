@@ -1,7 +1,11 @@
-.wrapper {
+.container {
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.wrapper-block {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .block-left {
@@ -12,5 +16,5 @@
 .block-right {
     float: right;
     margin: 0 auto;
-    width: 1000px;
+    width: auto;
 }
