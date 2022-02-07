@@ -8,8 +8,6 @@ type GroceriesProps = {
 };
 
 const GroceriesPanel = ({ groceries }: GroceriesProps) => {
-    const departments = Object.keys(groceries);
-
     const [activeList, setActiveList] = useState<string[]>([]);
 
     const handleClick = (event: any) => {
@@ -17,6 +15,7 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
         const btn = element.tagName === "I" ? element.parentElement : element;
         const department = btn.id.split("-")[1];
         const found = activeList.find((element) => element === department);
+        console.log(groceries[department].length);
 
         if (!found) {
             setActiveList((oldActiveList) => [...oldActiveList, department]);
@@ -28,16 +27,19 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
         }
     };
 
+    const departments = Object.keys(groceries);
+
     if (departments.length === 0) {
         return (
             <div>
                 <Title title="Groceries"></Title>
                 <div className="groceries_card">
-                    <div className="empty_list">Your list is empty</div>
+                    <div className="empty-list">Your list is empty</div>
                 </div>
             </div>
         );
     }
+
     return (
         <div>
             <Title title="Groceries"></Title>
@@ -69,17 +71,21 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
                                     </div>
                                 ))}
                             </div>
-                            <div
-                                id={`button-` + department}
-                                className="toggle"
-                                onClick={handleClick}
-                            >
-                                {activeList.includes(department) ? (
-                                    <i className="fas fa-angle-up"></i>
-                                ) : (
-                                    <i className="fas fa-ellipsis-h"></i>
-                                )}
-                            </div>
+                            {groceries[department].length > 4 ? (
+                                <div
+                                    id={`button-` + department}
+                                    className="toggle"
+                                    onClick={handleClick}
+                                >
+                                    {activeList.includes(department) ? (
+                                        <i className="fas fa-angle-up"></i>
+                                    ) : (
+                                        <i className="fas fa-ellipsis-h"></i>
+                                    )}
+                                </div>
+                            ) : (
+                                <i className="icon-inactive"></i>
+                            )}
                         </div>
                     ))}
                 </ul>
