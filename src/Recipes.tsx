@@ -62,8 +62,18 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                         perMove: 1,
                         gap: "6rem",
                         padding: "50px",
+                        pagination: false,
                         breakpoints: {
-                            1000: {
+                            1900: {
+                                perPage: 4,
+                            },
+                            1600: {
+                                perPage: 3,
+                            },
+                            1300: {
+                                perPage: 2,
+                            },
+                            900: {
                                 perPage: 1,
                             },
                         },

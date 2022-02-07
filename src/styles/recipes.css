@@ -46,8 +46,33 @@ h1 {
 
 .carousel {
     margin: 0 auto;
-    width: 800px;
+    width: 1000px;
 }
+
+@media screen and (max-width: 2000px) {
+    .carousel {
+        width: 1500px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .carousel {
+        width: 1200px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .carousel {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .carousel {
+        width: 400px;
+    }
+}
+
 .card_list {
     display: flex;
     flex-wrap: wrap;

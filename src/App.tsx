@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import GroceriesComponent from "./Groceries";
-import "./styles/main.css";
 import { addRecipeIngredientsToGroceryList, Groceries, Recipe } from "./model";
 import Recipes from "./Recipes";
 
@@ -13,24 +12,21 @@ const App = () => {
         <div>
             <div className="container">
                 <h1>Recipe 2 List!</h1>
-
-                <div className="wrapper-block">
-                    <div className="block-left">
-                        <Recipes
-                            recipes={recipes}
-                            onClick={(recipe) => {
-                                const updatedGroceries =
-                                    addRecipeIngredientsToGroceryList(
-                                        groceries,
-                                        recipe,
-                                    );
-                                setGroceries(updatedGroceries);
-                            }}
-                        />
-                    </div>
-                    <div className="block-right">
-                        <GroceriesComponent groceries={groceries} />
-                    </div>
+                <div>
+                    <Recipes
+                        recipes={recipes}
+                        onClick={(recipe) => {
+                            const updatedGroceries =
+                                addRecipeIngredientsToGroceryList(
+                                    groceries,
+                                    recipe,
+                                );
+                            setGroceries(updatedGroceries);
+                        }}
+                    />
+                </div>
+                <div>
+                    <GroceriesComponent groceries={groceries} />
                 </div>
             </div>
         </div>
