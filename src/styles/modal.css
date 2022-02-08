@@ -9,6 +9,7 @@
     z-index: 100;
     left: 0px;
     top: 0;
+    overflow: auto;
 }
 
 .modal-container {
@@ -19,7 +20,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding-right: 25px;
 }
 
 .modal-container .title {
@@ -56,7 +57,7 @@ i {
 
 .recipe-image {
     width: 250px;
-    height: 600px;
+    height: 790px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +74,7 @@ i {
     font-size: 25px;
     font-weight: bold;
     padding: 0 80px;
+    color: #6558d3;
 }
 
 .instructions-container {
@@ -91,4 +93,86 @@ i {
     padding: 0 40px;
     font-size: 18px;
     text-align: justify;
+}
+
+@media screen and (max-width: 1000px) {
+    .modal-container {
+        width: auto;
+        margin-left: 150px;
+        margin-right: 150px;
+        padding: 25px;
+        height: auto;
+    }
+
+    .modal-container .body {
+        flex-direction: column;
+    }
+
+    .recipe-image {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .modal-container {
+        width: auto;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding: 25px;
+        height: auto;
+    }
+
+    .recipe-title {
+        padding: 0 30px;
+        font-size: 20px;
+    }
+
+    .section {
+        font-size: 18px;
+    }
+
+    .instructions {
+        font-size: 15px;
+    }
+
+    .instructions-container {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-container {
+        width: auto;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding: 25px;
+    }
+
+    .recipe-title {
+        padding: 0 30px;
+        font-size: 20px;
+    }
+
+    .section {
+        font-size: 18px;
+    }
+
+    .instructions {
+        font-size: 15px;
+    }
+
+    .instructions-container {
+        padding: 0;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .modal-container {
+        width: auto;
+        margin-left: 150px;
+        margin-right: 150px;
+        padding: 25px;
+        height: auto;
+        margin-top: 400px;
+    }
 }

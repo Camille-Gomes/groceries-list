@@ -1,4 +1,4 @@
-.groceries_card {
+.groceries-card {
     width: auto;
     height: auto;
     padding: 15px;
@@ -16,7 +16,7 @@
     justify-content: center;
 }
 
-.department_container {
+.department-container {
     width: 200px;
     height: auto;
     background-color: white;
@@ -35,13 +35,13 @@
     border-radius: 6px;
 }
 
-.ingredient_container {
+.ingredient-container {
     padding: 0.5em 0.75em;
     height: 150px;
     overflow: hidden;
 }
 
-.ingredient_container.active {
+.ingredient-container.active {
     height: auto;
     transform: translateY(0);
 }

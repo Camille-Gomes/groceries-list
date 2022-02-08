@@ -1,26 +1,25 @@
 body {
-    font-family: "Nunito", sans-serif;
+    font-family: "Open Sans", sans-serif;
     background-color: #f3f5ff;
 }
 
 h1 {
     font-family: "Pacifico", cursive;
     font-size: 4em;
-    margin: 0.5em 0;
+    margin: 0;
     text-align: center;
 }
 
-.title_wrapper {
+.title-wrapper {
     margin: 0 auto;
 }
 
 .title {
     margin-left: 55px;
     font-size: 2em;
-    font-family: "Source Sans Pro", sans-serif;
 }
 
-.title_hover_line {
+.title-hover-line {
     opacity: 0;
     width: 0px;
     transition: opacity 200ms ease 0s, width 200ms ease 0s;
@@ -73,7 +72,7 @@ h1 {
     }
 }
 
-.card_list {
+.card-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -87,7 +86,7 @@ h1 {
     background-color: white;
 }
 
-.card_content {
+.card-content {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -99,10 +98,10 @@ h1 {
     height: 150px;
 }
 
-.recipe_name {
+.recipe-name {
     color: #222;
     margin: 15px;
-    font-size: 1.3em;
+    font-size: 18px;
     font-weight: bold;
     height: 100px;
 }
@@ -128,8 +127,8 @@ h1 {
 }
 
 .button:hover {
-    background-color: #4caf50;
-    color: white;
+    background-color: #d5cdf7;
+    color: #6558d3;
 }
 
 button i {

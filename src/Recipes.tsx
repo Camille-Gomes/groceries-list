@@ -55,7 +55,7 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
             <Title title="Recipes"></Title>
             <div className="carousel">
                 <Splide
-                    className="card_list"
+                    className="card-list"
                     options={{
                         type: "loop",
                         perPage: 4,
@@ -80,7 +80,7 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                     }}
                 >
                     {recipes.map((recipe) => (
-                        <SplideSlide className="card">
+                        <SplideSlide className="card" key={recipe.title}>
                             <img
                                 className="image"
                                 src={
@@ -90,8 +90,8 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                                 }
                                 alt="recette"
                             ></img>
-                            <div className="card_content">
-                                <span className="recipe_name">
+                            <div className="card-content">
+                                <span className="recipe-name">
                                     {recipe.title}
                                 </span>
                                 <div className="btn">

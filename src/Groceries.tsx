@@ -15,7 +15,6 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
         const btn = element.tagName === "I" ? element.parentElement : element;
         const department = btn.id.split("-")[1];
         const found = activeList.find((element) => element === department);
-        console.log(groceries[department].length);
 
         if (!found) {
             setActiveList((oldActiveList) => [...oldActiveList, department]);
@@ -33,7 +32,7 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
         return (
             <div>
                 <Title title="Groceries"></Title>
-                <div className="groceries_card">
+                <div className="groceries-card">
                     <div className="empty-list">Your list is empty</div>
                 </div>
             </div>
@@ -43,17 +42,17 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
     return (
         <div>
             <Title title="Groceries"></Title>
-            <div className="groceries_card">
+            <div className="groceries-card">
                 <ul className="wrapper">
                     {departments.map((department) => (
                         <div
                             id={`container-` + department}
-                            className="department_container"
+                            className="department-container"
                         >
                             <span className="department">{department}</span>
                             <div
                                 id={`ingredient-container-` + department}
-                                className={`ingredient_container ${
+                                className={`ingredient-container ${
                                     activeList.includes(department)
                                         ? "active"
                                         : "inactive"
