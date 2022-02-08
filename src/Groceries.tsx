@@ -48,6 +48,7 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
                         <div
                             id={`container-` + department}
                             className="department-container"
+                            key={department}
                         >
                             <span className="department">{department}</span>
                             <div
@@ -73,6 +74,7 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
                             {groceries[department].length > 4 ? (
                                 <div
                                     id={`button-` + department}
+                                    key={department}
                                     className="toggle"
                                     onClick={handleClick}
                                 >

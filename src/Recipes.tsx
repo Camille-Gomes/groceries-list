@@ -50,6 +50,9 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                     title={modalContent.title}
                     instructions={modalContent.instructions}
                     servings={modalContent.servings}
+                    className={
+                        `modal-container recipe-` + modalContent.recipe_id
+                    }
                 ></Modal>
             )}
             <Title title="Recipes"></Title>

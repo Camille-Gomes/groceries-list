@@ -9,11 +9,12 @@ const Modal: FC<ModalProps> = ({
     title,
     instructions,
     servings,
+    className,
 }) => {
     return (
         <div id="modal">
             <div className="modal-background">
-                <div className="modal-container">
+                <div className={className}>
                     <div className="body">
                         <div className="image-container">
                             <img
