@@ -12,7 +12,6 @@
     align-items: flex-start;
     flex-flow: row wrap;
     gap: 50px;
-    padding: 5px;
 }
 
 .department-container {
@@ -72,4 +71,11 @@
 
 .empty-list {
     padding: 10px 50px;
+}
+
+@media screen and (max-width: 730px) {
+    .wrapper {
+        justify-content: center;
+        padding-left: 0;
+    }
 }
