@@ -10,10 +10,7 @@ type GroceriesProps = {
 const GroceriesPanel = ({ groceries }: GroceriesProps) => {
     const [activeList, setActiveList] = useState<string[]>([]);
 
-    const handleClick = (event: any) => {
-        const element = event.target;
-        const btn = element.tagName === "I" ? element.parentElement : element;
-        const department = btn.id.split("-")[1];
+    const handleClick = (department: string) => {
         const found = activeList.find((element) => element === department);
 
         if (!found) {
@@ -76,7 +73,7 @@ const GroceriesPanel = ({ groceries }: GroceriesProps) => {
                                     id={`button-` + department}
                                     key={department}
                                     className="toggle"
-                                    onClick={handleClick}
+                                    onClick={() => handleClick(department)}
                                 >
                                     {activeList.includes(department) ? (
                                         <i className="fas fa-angle-up"></i>

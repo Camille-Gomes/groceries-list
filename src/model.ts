@@ -34,6 +34,15 @@ const addIngredientToList = (
     if (hasIngredient(list, ingredientToAdd)) {
         return list.map((ingredient) => {
             if (ingredient.name === ingredientToAdd.name) {
+                if (ingredientToAdd.unit === "kg") {
+                    const newQuantity =
+                        ingredient.quantity + ingredientToAdd.quantity * 1000;
+                    const newIngredient = {
+                        ...ingredient,
+                        quantity: newQuantity,
+                    };
+                    return newIngredient;
+                }
                 const newQuantity =
                     ingredient.quantity + ingredientToAdd.quantity;
                 const newIngredient = { ...ingredient, quantity: newQuantity };

@@ -26,7 +26,7 @@ const Modal: FC<ModalProps> = ({
                         <div className="text-container">
                             <div className="title">
                                 <div className="close-btn">
-                                    <button onClick={() => closeModal(false)}>
+                                    <button onClick={closeModal}>
                                         <i className="fas fa-times"></i>
                                     </button>
                                 </div>

@@ -27,32 +27,28 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
     const [activeModal, setActiveModal] = useState<boolean>(false);
     const [modalContent, setModalContent] = useState<Recipe>(emptyRecipe);
 
-    const toggleModal = (recipe: Recipe) => {
-        if (!activeModal) {
-            setModalContent(() => recipe);
-            setActiveModal(() => true);
-        } else {
-            setActiveModal(() => false);
-        }
+    const openModal = (recipe: Recipe) => {
+        setModalContent(recipe);
+        setActiveModal(true);
     };
+
+    const closeModal = () => setActiveModal(false);
 
     return (
         <div>
             {activeModal && (
                 <Modal
-                    closeModal={setActiveModal}
+                    closeModal={closeModal}
                     src={
                         process.env.PUBLIC_URL +
                         "./images/" +
                         modalContent.image_name
                     }
-                    alt="toto"
+                    alt={`Recipe- ${modalContent.recipe_id}`}
                     title={modalContent.title}
                     instructions={modalContent.instructions}
                     servings={modalContent.servings}
-                    className={
-                        `modal-container recipe-` + modalContent.recipe_id
-                    }
+                    className={`modal-container recipe- ${modalContent.recipe_id}`}
                 ></Modal>
             )}
             <Title title="Recipes"></Title>
@@ -109,7 +105,7 @@ const Recipes = ({ recipes, onClick }: RecipesProps) => {
                                     <Button
                                         id="recipe-instructions"
                                         className="openModalBtn button"
-                                        onClick={() => toggleModal(recipe)}
+                                        onClick={() => openModal(recipe)}
                                     >
                                         See more
                                         <i className="fas fa-plus"></i>

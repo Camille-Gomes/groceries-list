@@ -21,11 +21,28 @@ const blackPepper = (n = 1) => ({
     unit: "",
 });
 
+const shrimp = (n = 1, unit = "") => ({
+    name: "shrimp",
+    department: "Seefood",
+    quantity: n,
+    unit: unit,
+});
+
 const aRecipe: Recipe = {
     recipe_id: 1,
     title: "Guacamole for lazy dudes",
     image_name: "na.jpg",
     ingredients: [avocado(2), lemon()],
+    instructions:
+        "In a sauce pan on Medium heat add water and butter. Allow the butter to completely melt (about 2 minutes). Add Basil, Cayenne Pepper, Salt, Pepper, Paprika and Garlic Powder.",
+    servings: 4,
+};
+
+const aShrimpRecipe: Recipe = {
+    recipe_id: 1,
+    title: "Guacamole for lazy dudes",
+    image_name: "na.jpg",
+    ingredients: [shrimp(1, "kg")],
     instructions:
         "In a sauce pan on Medium heat add water and butter. Allow the butter to completely melt (about 2 minutes). Add Basil, Cayenne Pepper, Salt, Pepper, Paprika and Garlic Powder.",
     servings: 4,
@@ -77,5 +94,21 @@ it("should sum ingredient quantities when adding a recipe to a non empty list", 
     expect(newList).toEqual({
         Condiments: [lemon()],
         Produce: [avocado(9)],
+    });
+});
+
+it("should sum ingredient quantities whith different units", () => {
+    // given
+    const initialGroceryList = {
+        Produce: [shrimp(7, "g")],
+    };
+    // when
+    const newList = addRecipeIngredientsToGroceryList(
+        initialGroceryList,
+        aShrimpRecipe,
+    );
+    // then
+    expect(newList).toEqual({
+        Seefood: [shrimp(1007, "g")],
     });
 });

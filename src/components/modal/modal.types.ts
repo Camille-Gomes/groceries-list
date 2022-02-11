@@ -5,5 +5,5 @@ export interface ModalProps {
     title: string;
     instructions: string;
     servings: number;
-    closeModal: (active: boolean) => void;
+    closeModal: () => void;
 }
